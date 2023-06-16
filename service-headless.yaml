@@ -1,0 +1,23 @@
+# This headless service allows communication between RabbitMQ nodes via hostname instead of IP addresses.
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq-discovery
+  labels:
+    app.kubernetes.io/name: rabbitmq
+    app.kubernetes.io/component: rabbitmq-server
+spec:
+  ports:
+  - name: amqp
+    port: 5672
+  - name: amqp-ssl
+    port: 5671
+  - name: clustering
+    port: 25672
+  - name: http
+    port: 15672
+  selector:
+    app.kubernetes.io/name: rabbitmq
+    app.kubernetes.io/component: rabbitmq-server
+  type: ClusterIP
+  clusterIP: None
