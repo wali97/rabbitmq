@@ -8,8 +8,8 @@ metadata:
     app.kubernetes.io/component: rabbitmq-server
 type: Opaque
 data:
-  rabbitmq-erlang-cookie: "aXByVUJ3YzJmZEkwa0Z4UWxMaDcwM3M5VUptcVVsNDM="
-  rabbitmq-pass: "ZFhvQkIzWHM4M0VH"
+  rabbitmq-erlang-cookie: "xxxxxxxxxxxxxxxxxxxxxxx"
+  rabbitmq-password: "xxxxxxxxxxxx"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -162,7 +162,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: rabbitmq-secret
-              key: rabbitmq-pass
+              key: rabbitmq-password
         ports:
         - name: clustering
           containerPort: 25672
