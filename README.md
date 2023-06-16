@@ -33,5 +33,7 @@ mirroring for all RabbitMQ nodes in the cluster, and automatically synchronizes
 with new mirrors that join the cluster. It is enabled as part of the
 installation, on each node's `postStart` event.
 
+To read more about rabbitmq on kubernetes,refer to below documentation:
+https://www.rabbitmq.com/clustering.html
 
 
