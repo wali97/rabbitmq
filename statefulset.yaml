@@ -127,7 +127,8 @@ spec:
                 done
 
                 # By default, RabbitMQ does not have Highly Available policies enabled,
-                # using the following command to enable it.
+                # using the following command to enable it. u don't need to create this policy if using only quorum queues,automatic replication
+                # will happen in that case. if working with classic queues,then u need to create this policy for queue replication.
                 rabbitmqctl set_policy ha-all "." '{"ha-mode":"all", "ha-sync-mode":"automatic"}' --apply-to all --priority 0
       
       volumes:
